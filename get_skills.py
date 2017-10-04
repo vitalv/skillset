@@ -1,4 +1,6 @@
 from linkedin import linkedin
+import pandas as pd
+
 
 # Define CONSUMER_KEY, CONSUMER_SECRET,  
 # USER_TOKEN, and USER_SECRET from the credentials 
@@ -17,3 +19,9 @@ application = linkedin.LinkedInApplication(authentication)
 # Use the app....
 
 application.get_profile()
+
+
+#read  linkedin skills
+sk = pd.read_csv('linkedin_skills.txt', names=["skill", "sep2017"])
+
+sk.to_dict(orient='record')
